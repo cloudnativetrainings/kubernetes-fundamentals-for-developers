@@ -1,0 +1,34 @@
+{
+    "name": "Kubernetes Fundamentals Training Labs",
+    "image": "quay.io/kubermatic-labs/devcontainers:kubernetes-fundamentals-for-devs-1e7fcf2",
+    "customizations": {
+      "vscode": {
+        "settings": {
+          "workbench.editorAssociations": {
+            "*.md": "vscode.markdown.preview.editor"
+          },
+          "files.exclude": {
+            ".git/": true,
+            ".github/": true,
+            ".devcontainer/": true
+          }
+        }
+      }
+    },
+    "features": {
+      "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
+        "enableNonRootDocker": "true",
+        "moby": "true"
+      }
+    },
+    "remoteUser": "root",
+    "runArgs": [
+      "--network=host"
+    ],
+    "forwardPorts": [
+      8080,
+      80,
+      443
+    ],
+    "postCreateCommand": "/setup_kind_cluster.sh"
+  }
