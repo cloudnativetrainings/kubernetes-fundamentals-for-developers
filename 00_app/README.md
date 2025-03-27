@@ -1,15 +1,16 @@
-# Build Applications
+# The Application
 
-Build and push Go applications:
+In this lab you will get to know the application we will be using during the labs.
+
+## Inspect the source code
+
+Take a look at the file `main.go`. We will use this application during the training labs.
+
+## Build the application
 
 ```bash
-cd 00_apps/golang
-make docker-push-all
+cd 00_apps
+make docker-build
 ```
 
-These container images with tags will be created:
-
-- `quay.io/kubermatic-labs/training-application:2.0.0`
-- `quay.io/kubermatic-labs/training-application:2.0.0-A`
-- `quay.io/kubermatic-labs/training-application:2.0.0-B`
-- `quay.io/kubermatic-labs/training-application:2.0.0-distroless`
+> Note, you do not have to push the images. They already exist at the [image repo](https://quay.io/repository/kubermatic-labs/training-application)

@@ -5,14 +5,8 @@ In this example, we will deploy an app called `my-app` and it will read the appl
 Change into the lab directory:
 
 ```bash
-cd /workspaces/kubernetes-fundamentals-for-devs/01_configmaps
+cd 01_configmaps
 ```
-
-> INGRESS_IP environment variable is supposed to be set during the setup. You can always set it this way:
->
-> ```bash
-> export INGRESS_IP=$(kubectl get svc ingress-nginx-controller -n ingress-nginx -o jsonpath='{.status.loadBalancer.ingress[].ip}')
-> ```
 
 ## Configure the Application via ConfigMap
 
@@ -40,7 +34,7 @@ kubectl port-forward svc/ingress-nginx-controller -n ingress-nginx 80
 Then, reach via below URLs:
 
 ```bash
-echo "https://${CODESPACE_NAME}-80.app.github.dev/my-app"
+echo "${INGRESS_URL}/my-app"
 ```
 
 > Note that the the message is taken from the ConfigMap and not from the containers default configuration file for the application.
@@ -86,7 +80,7 @@ kubectl port-forward svc/ingress-nginx-controller -n ingress-nginx 80
 Then, reach via below URLs:
 
 ```bash
-echo "https://${CODESPACE_NAME}-80.app.github.dev/my-app"
+echo "${INGRESS_URL}/my-app"
 ```
 
 ## Additional Information
