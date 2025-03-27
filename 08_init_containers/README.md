@@ -5,7 +5,7 @@ Init containers can contain utilities or setup scripts not present in an app ima
 Change into the lab directory:
 
 ```bash
-cd /workspaces/kubernetes-fundamentals-for-devs/08_init_containers
+cd 08_init_containers
 ```
 
 ## Deploy apps

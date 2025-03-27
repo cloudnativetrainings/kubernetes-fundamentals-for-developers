@@ -5,7 +5,7 @@ In this training, you will learn about downward API to provide a container some 
 Change into the lab directory:
 
 ```bash
-cd /workspaces/kubernetes-fundamentals-for-devs/02_downward_api
+cd 02_downward_api
 ```
 
 > INGRESS_IP environment variable is supposed to be set during the setup. You can always set it this way:

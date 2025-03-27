@@ -7,7 +7,7 @@ The application implements a shutdown hook and needs 10 seconds for a proper shu
 Change into the lab directory:
 
 ```bash
-cd /workspaces/kubernetes-fundamentals-for-devs/05_graceful_shutdown
+cd 05_graceful_shutdown
 ```
 
 ## Possible data loss

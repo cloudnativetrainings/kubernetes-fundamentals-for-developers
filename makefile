@@ -11,8 +11,5 @@ verify:
 	docker pull quay.io/kubermatic-labs/training-application:2.0.0-distroless
 	test -n "$(INGRESS_IP)"
 	test -n "$(INGRESS_URL)"
-	echo "Training Environment successfully verified"
-
-.PHONY: verify-cluster
-verify-cluster: 
 	./pre-checks.sh
+	echo "Training Environment successfully verified"
