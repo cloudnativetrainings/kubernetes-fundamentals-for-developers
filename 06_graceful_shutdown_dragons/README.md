@@ -51,6 +51,7 @@ Take a look at the logfiles. Did the graceful shutdown happen on both Pods? If n
   <summary>Hint</summary>
 
 You can check the `Dockerfile`s here:
+
 - [app-a](../00_app/Dockerfile-A)
 - [app-b](../00_app/Dockerfile-B)
 

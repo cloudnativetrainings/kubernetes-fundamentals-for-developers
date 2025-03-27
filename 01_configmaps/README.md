@@ -50,7 +50,7 @@ echo "https://${CODESPACE_NAME}-80.app.github.dev/my-app"
 Change the message of the ConfigMap `k8s/configmap.yaml`
 
 ```yaml
-data: 
+data:
   app.conf: |-
     message = Some different message
 ```

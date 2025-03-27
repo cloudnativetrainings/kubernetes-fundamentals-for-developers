@@ -49,7 +49,7 @@ kind: Pod
 metadata:
   name: app
 spec:
-  terminationGracePeriodSeconds: 12  # --> Change this line
+  terminationGracePeriodSeconds: 12 # --> Change this line
   containers:
     - name: app
       image: quay.io/kubermatic-labs/training-application:1.0.0-go
@@ -62,7 +62,7 @@ spec:
 kubectl create -f k8s/pod.yaml
 ```
 
-### Follow the logs of the pod
+### Follow the logs of the pod again
 
 > [!IMPORTANT]
 > Do this in a seperate terminal.
@@ -82,13 +82,13 @@ kubectl delete pod app
 
 ## Danger Zone
 
-### Re-Create the Pod
+### Re-Create the Pod again
 
 ```bash
 kubectl create -f k8s/pod.yaml
 ```
 
-### Follow the logs of the pod
+### Follow the logs of the pod again
 
 > [!IMPORTANT]
 > Do this in a seperate terminal.
