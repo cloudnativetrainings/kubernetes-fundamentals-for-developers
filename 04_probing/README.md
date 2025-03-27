@@ -2,12 +2,6 @@
 
 In this training, you will learn about health probes.
 
-> INGRESS_IP environment variable is supposed to be set during the setup. You can always set it this way:
->
-> ```bash
-> export INGRESS_IP=$(kubectl get svc ingress-nginx-controller -n ingress-nginx -o jsonpath='{.status.loadBalancer.ingress[].ip}')
-> ```
-
 The application implements the following health probes:
 
 - `liveness :` http://${INGRESS_IP}/probe_app/liveness
@@ -44,14 +38,17 @@ You should get a `HTTP/1.1 200 OK` status code.
 We will now change the readiness state of the application. Therefore please open an additional terminal for being able to communicate with the application.
 
 ```bash
+# [TERMINAL-1] Check the readiness of the application
+watch -n 1 kubectl get pods
+
 # [TERMINAL-2] Attach to the application
 kubectl attach -it probe-app
 
 # [TERMINAL-2] Set the application to not ready
 set unready
 
-# [TERMINAL-1] Check the readiness of the application
-kubectl get pods
+# [TERMINAL 1] note that the pod now is not ready to receive any requests
+# exit the watch command via STRG+C
 
 # [TERMINAL-1] Access the application (this will fail)
 curl -I http://${INGRESS_IP}/probe-app
@@ -64,6 +61,12 @@ curl -I http://${INGRESS_IP}/probe-app
 We will now change the liveness state of the application. Therefore please open an additional terminal for being able to communicate with the application.
 
 ```bash
+# [TERMINAL-1] Check the readiness of the application
+watch -n 1 kubectl get pods
+
+# [TERMINAL-2] Attach to the application
+kubectl attach -it probe-app
+
 # [TERMINAL-2] Set the application to dead and wait for ~ 10 seconds
 set dead
 

@@ -27,25 +27,25 @@ kubectl get pods
 ## Watch the log files of the Pods
 
 ```bash
-# Check if the pods are Running
+# [TERMINAL-1] check if the pods are Running
 kubectl get pods
 
-# [SECOND SHELL] Open another shell and start tailing logs for app-a
-kubectl logs app-a -f
+# [TERMINAL-1] open another shell and start tailing logs for app-a
+kubectl logs -f app-a
 
-# Delete the pod-A
+# [TERMINAL-2] delete the pod-A
 kubectl delete -f k8s/pod-A.yaml
 
-# [SECOND SHEL] Tail log file for pod-B
-kubectl logs app-b -f
+# [TERMINAL-1] open another shell and start tailing logs for app-b
+kubectl logs -f app-b
 
-# Delete the pod-B
+# [TERMINAL-2] delete the pod-B
 kubectl delete -f k8s/pod-B.yaml
 ```
 
 ## Verification of Graceful Shutdown
 
-Take a look at the logfiles. Did the graceful shutdown happen on both Pods? If not, why?
+Take a look at the logs. Did the graceful shutdown happen on both Pods? If not, why?
 
 <details>
   <summary>Hint</summary>

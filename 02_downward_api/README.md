@@ -8,12 +8,6 @@ Change into the lab directory:
 cd 02_downward_api
 ```
 
-> INGRESS_IP environment variable is supposed to be set during the setup. You can always set it this way:
->
-> ```bash
-> export INGRESS_IP=$(kubectl get svc ingress-nginx-controller -n ingress-nginx -o jsonpath='{.status.loadBalancer.ingress[].ip}')
-> ```
-
 ## How it works
 
 Check the pod spec:

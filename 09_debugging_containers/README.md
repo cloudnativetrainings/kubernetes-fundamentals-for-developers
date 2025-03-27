@@ -56,6 +56,9 @@ ls -l
 cd /proc/1/root
 
 ls -l
+
+# exit the debug container
+exit
 ```
 
 ## Access to the host with ephemeral containers
@@ -63,11 +66,16 @@ ls -l
 Create a shell on the node:
 
 ```bash
-# First select one of the nodes:
+# first select one of the nodes
 kubectl get nodes
 
-# Then start the shell:
+# then start the shell:
 kubectl debug node/<NODE_NAME> -it --image=ubuntu
+
+# note that you are now connected to the worker node
+
+# exit the debug container
+exit
 ```
 
 ## Cleanup

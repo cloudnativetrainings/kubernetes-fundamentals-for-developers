@@ -21,18 +21,13 @@ cat k8s/pod.yaml
 kubectl create -f k8s/pod.yaml
 ```
 
-### Follow the logs of the pod
-
-> [!IMPORTANT]
-> Do this in a seperate terminal.
+### Verify that graceful shutdown does not happen
 
 ```bash
+# [TERMINAL-1] follow the logs of your application
 kubectl logs -f app
-```
 
-### Stop the Pod
-
-```bash
+# [TERMINAL-2] delete the pod
 kubectl delete pod app
 ```
 
@@ -56,24 +51,14 @@ spec:
       imagePullPolicy: Always
 ```
 
-### Re-Create the Pod
-
 ```bash
+# [TERMINAL-1] recreate the pod
 kubectl create -f k8s/pod.yaml
-```
 
-### Follow the logs of the pod again
-
-> [!IMPORTANT]
-> Do this in a seperate terminal.
-
-```bash
+# [TERMINAL-1] follow the logs of your application
 kubectl logs -f app
-```
 
-### Stop the Pod again
-
-```bash
+# [TERMINAL-2] delete the pod
 kubectl delete pod app
 ```
 
@@ -82,26 +67,14 @@ kubectl delete pod app
 
 ## Danger Zone
 
-### Re-Create the Pod again
-
 ```bash
+# [TERMINAL-1] recreate the pod
 kubectl create -f k8s/pod.yaml
-```
 
-### Follow the logs of the pod again
-
-> [!IMPORTANT]
-> Do this in a seperate terminal.
-
-```bash
+# [TERMINAL-1] follow the logs of your application
 kubectl logs -f app
-```
 
-### Stop the Pod again
-
-This time, provide the `Grace Period` on the command line:
-
-```bash
+# [TERMINAL-1] stop the Pod again ungracefully via the flag `--grace-period`
 kubectl delete pod app --grace-period=0
 ```
 

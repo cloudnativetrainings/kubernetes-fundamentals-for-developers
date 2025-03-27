@@ -17,39 +17,26 @@ cat k8s/pod-A.yaml
 cat k8s/pod-B.yaml
 ```
 
-Create the `pod-a`:
-
 ```bash
+# [TERMINAL-1] create the pod A
 kubectl create -f k8s/pod-A.yaml
-```
 
-Check the status, you will see that it's in `Init` state:
-
-```bash
+# [TERMINAL-1] check the status, you will see that it's in `Init` state:
 kubectl get pods
 
 # output:
 #NAME    READY   STATUS     RESTARTS   AGE
 #pod-a   0/1     Init:0/1   0          4s
-```
 
-Check the logs for the init container:
-
-> [!IMPORTANT]
-> Do this in a seperate terminal.
-
-```bash
+# [TERMINAL-1] check the logs for the init container:
 kubectl logs pod-a -c wait-for-pod-b -f
-```
 
-Now, create the `pod-b` and it's service
-
-```bash
+# [TERMINAL-2] now, create the `pod-b` and it's service
 kubectl create -f k8s/pod-B.yaml
 kubectl create -f k8s/service-B.yaml
 ```
 
-You will see the ready message on the other terminal!
+> You will see the ready message on the other terminal!
 
 ## Cleanup
 

@@ -1,8 +1,6 @@
 # Resource Limits
 
-In this training, you will learn about resource limits.
-
-The application implements a CPU and a Memory leak.
+In this lab, you will learn about resource limits. The application implements a CPU and a Memory leak.
 
 Change into the lab directory:
 
@@ -24,14 +22,14 @@ kubectl create -f k8s/pod.yaml
 Learn what happens when your application reaches its CPU limits.
 
 ```bash
-# [TERMINAL-2] Attach to the application
+# [TERMINAL-1] check what is happening with the Pod.
+watch -n 1 kubectl top pods
+
+# [TERMINAL-2] attach to the application
 kubectl attach -it my-app
 
-# [TERMINAL-2] Engage the CPU leak
+# [TERMINAL-2] engage the CPU leak
 leak cpu
-
-# Check what is happening with the Pod.
-watch -n 1 kubectl top pods
 ```
 
 > [!IMPORTANT]
@@ -42,17 +40,20 @@ watch -n 1 kubectl top pods
 Learn what happens when your application reaches its Memory limits.
 
 ```bash
-# Restart the Pod
+# [TERMINAL-1] restart the Pod
 kubectl delete pod my-app --force --grace-period=0
 kubectl apply -f k8s/pod.yaml
 
-# [TERMINAL-2] Attach to the application
+# [TERMINAL-1] check what is happening with the Pod.
+watch -n 1 kubectl top pods
+
+# [TERMINAL-2] attach to the application
 kubectl attach -it my-app
 
-# [TERMINAL-2] Engage the Memory Leak
+# [TERMINAL-2] engage the Memory Leak
 leak mem
 
-# After the Container gets restarted (~ 10 seconds) you see this in the RESTARTS column of
+# [TERMINAL-1] after the Container gets restarted (~ 10 seconds) you see this in the RESTARTS column of
 kubectl get pods
 
 # The reason for the last restart (=OOMKilled) you can find out via the following command
