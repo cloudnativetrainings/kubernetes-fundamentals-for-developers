@@ -10,7 +10,7 @@ cd 07_resources
 
 ## Create the Pod
 
-Inspect pod.yaml and service.yaml definition file and create the pod and the service
+Inspect pod.yaml definition file and create the pod
 
 ```bash
 cat k8s/pod.yaml
@@ -65,5 +65,5 @@ kubectl get pod my-app -o jsonpath='{.status.containerStatuses[0].lastState}' | 
 Delete the created resources.
 
 ```bash
-kubectl delete -f k8s/ --force --grace-period=0
+kubectl delete -f k8s/ --grace-period=0
 ```
