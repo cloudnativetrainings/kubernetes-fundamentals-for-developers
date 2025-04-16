@@ -7,3 +7,5 @@ the lab "how to talk to kubernetes" from my app is missing
 - the app is not polling the config
 
 => the lab currently confuses trainees
+
+# make use of training application instead of nginx all the time

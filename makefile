@@ -4,6 +4,8 @@ verify:
 	docker --version
 	kind --version
 	kubectl version --client
+	kubectx
+	kubens
 	helm version
 	docker pull quay.io/kubermatic-labs/training-application:2.0.0
 	docker pull quay.io/kubermatic-labs/training-application:2.0.0-A
