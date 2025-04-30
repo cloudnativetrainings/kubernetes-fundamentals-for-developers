@@ -1,6 +1,6 @@
 {
   "name": "Kubernetes Fundamentals For Developers Training Labs",
-  "image": "quay.io/kubermatic-labs/training-ghcs-kubernetes-fundamentals-for-developers-trainee-environment:1.0.0",
+  "image": "quay.io/kubermatic-labs/training-ghcs-kubernetes-fundamentals-for-developers-trainee-environment:1.0.1",
   "customizations": {
     "vscode": {
       "settings": {
@@ -9,10 +9,11 @@
         },
         "files.exclude": {
           ".git/": true,
-          ".github/": true,
+          ".gitignore": true,
           ".devcontainer/": true,
           ".99_todos/": true,
-          "pre-checks.sh": true
+          "pre-checks.sh": true,
+          "makefile": true
         },
         "extensions": [
           "ms-vscode.makefile-tools",

@@ -1,5 +1,7 @@
 .PHONY: verify
 verify:
+	test -f /root/.trainingrc
+	grep "source /root/.trainingrc" /root/.bashrc
 	go version
 	docker --version
 	kind --version
