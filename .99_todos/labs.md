@@ -8,4 +8,4 @@ the lab "how to talk to kubernetes" from my app is missing
 
 => the lab currently confuses trainees
 
-# make use of training application instead of nginx all the time
+# make use of training application from seperate repo

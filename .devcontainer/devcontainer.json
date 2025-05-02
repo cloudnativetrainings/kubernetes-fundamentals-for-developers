@@ -1,6 +1,6 @@
 {
   "name": "Kubernetes Fundamentals For Developers Training Labs",
-  "image": "quay.io/kubermatic-labs/training-ghcs-kubernetes-fundamentals-for-developers-trainee-environment:1.0.1",
+  "image": "quay.io/kubermatic-labs/training-ghcs-kubernetes-fundamentals-for-developers-trainee-environment:1.0.2",
   "customizations": {
     "vscode": {
       "settings": {
