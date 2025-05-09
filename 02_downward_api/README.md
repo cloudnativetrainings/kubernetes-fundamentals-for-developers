@@ -22,7 +22,7 @@ Apply the manifests and check the result through the ingress:
 kubectl apply -f k8s/
 
 # Get the environment values
-curl http://${INGRESS_IP}/my-app/downward_api
+curl http://${INGRESS_IP}/my-app/downward-api
 ```
 
 If you want to reach it via browser, you first need to port-forward ingress-nginx-controller service:
@@ -34,7 +34,7 @@ kubectl port-forward svc/ingress-nginx-controller -n ingress-nginx 80
 Then, reach via below URLs:
 
 ```bash
-echo "${INGRESS_URL}/my-app"
+echo "${INGRESS_URL}/my-app/downward-api"
 ```
 
 Also, check the `downwardAPI` volume:

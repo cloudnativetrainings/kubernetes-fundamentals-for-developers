@@ -36,7 +36,7 @@ func main() {
 	http.HandleFunc("/", handleRoot)
 	http.HandleFunc("/liveness", handleLiveness)
 	http.HandleFunc("/readiness", handleReadiness)
-	http.HandleFunc("/downward_api", handleDownwardApi)
+	http.HandleFunc("/downward-api", handleDownwardApi)
 
 	log.Info("App started")
 	http.ListenAndServe(":8080", nil)
@@ -81,8 +81,6 @@ func handleRoot(w http.ResponseWriter, r *http.Request) {
 	message := props.GetString("message", "Property is not set")
 	fmt.Fprintf(w, "<!DOCTYPE html><htlml><body>")
 	fmt.Fprintf(w, "Message: %s<br>", message)
-	fmt.Fprintf(w, "Pod Name: %s<br>", os.Getenv("POD_NAME"))
-	fmt.Fprintf(w, "Pod IP: %s<br>", os.Getenv("POD_IP"))
 	fmt.Fprintf(w, "Live: %t<br>", alive)
 	fmt.Fprintf(w, "Ready: %t<br>", ready)
 	fmt.Fprintf(w, "</body></htlml>")
@@ -105,9 +103,11 @@ func handleReadiness(w http.ResponseWriter, r *http.Request) {
 }
 
 func handleDownwardApi(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "<!DOCTYPE html><htlml><body>")
 	fmt.Fprintf(w, "MY_NODE_NAME: %s<br>", os.Getenv("MY_NODE_NAME"))
 	fmt.Fprintf(w, "MY_POD_NAME: %s<br>", os.Getenv("MY_POD_NAME"))
 	fmt.Fprintf(w, "MY_POD_IP: %s<br>", os.Getenv("MY_POD_IP"))
+	fmt.Fprintf(w, "</body></htlml>")
 }
 
 func handleLifecycle() {
@@ -160,6 +160,7 @@ func leakCpu() {
 
 	f, err := os.Open(os.DevNull)
 	if err != nil {
+		log.Errorf("Error on opening /dev/null: %s", err)
 		panic(err)
 	}
 	defer f.Close()
