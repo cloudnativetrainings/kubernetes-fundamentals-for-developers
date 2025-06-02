@@ -10,15 +10,3 @@ spec:
     - name: app-b
       image: quay.io/kubermatic-labs/training-application:2.0.0-B
       imagePullPolicy: Always
-  affinity:
-    podAffinity:
-      preferredDuringSchedulingIgnoredDuringExecution:
-        - weight: 100
-          podAffinityTerm:
-            labelSelector:
-              matchExpressions:
-                - key: app
-                  operator: In
-                  values:
-                    - app-a
-            topologyKey: kubernetes.io/hostname
