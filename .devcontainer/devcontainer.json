@@ -4,9 +4,21 @@
   "customizations": {
     "vscode": {
       "settings": {
+        "chat.agent.enabled": false,
+        "chat.commandCenter.enabled": false,
+        "chat.disableAIFeatures": true,
+        "telemetry.feedback.enabled": false,
+        "telemetry.telemetryLevel": "off",
         "workbench.editorAssociations": {
           "*.md": "vscode.markdown.preview.editor"
         },
+        "workbench.settings.applyToAllProfiles": [
+          "chat.agent.enabled",
+          "chat.commandCenter.enabled",
+          "chat.disableAIFeatures",
+          "telemetry.feedback.enabled",
+          "telemetry.telemetryLevel"
+        ],
         "files.exclude": {
           ".git/": true,
           ".gitignore": true,
