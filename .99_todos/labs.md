@@ -9,3 +9,16 @@ the lab "how to talk to kubernetes" from my app is missing
 => the lab currently confuses trainees
 
 # make use of training application from seperate repo
+
+# new lab
+
+talk to apiserver and start pod
+after downward api lab
+
+# dragons lab
+
+show warnings via hadolint and docker build
+
+# lab configmaps
+
+app should poll config file

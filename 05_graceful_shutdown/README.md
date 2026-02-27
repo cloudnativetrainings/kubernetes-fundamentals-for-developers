@@ -74,7 +74,7 @@ kubectl create -f k8s/pod.yaml
 # [TERMINAL-1] follow the logs of your application
 kubectl logs -f app
 
-# [TERMINAL-1] stop the Pod again ungracefully via the flag `--grace-period`
+# [TERMINAL-2] stop the Pod again ungracefully via the flag `--grace-period`
 kubectl delete pod app --grace-period=0
 ```
 

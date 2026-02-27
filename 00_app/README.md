@@ -9,7 +9,7 @@ Take a look at the file `main.go`. We will use this application during the train
 ## Build the application
 
 ```bash
-cd 00_apps
+cd 00_app
 make docker-build
 ```
 
