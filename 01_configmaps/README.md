@@ -31,13 +31,13 @@ If you want to reach it via browser, you first need to port-forward ingress-ngin
 kubectl port-forward svc/ingress-nginx-controller -n ingress-nginx 80
 ```
 
-Then, reach via below URLs:
+Then, reach via the URLs below:
 
 ```bash
 echo "${INGRESS_URL}/my-app"
 ```
 
-> Note that the the message is taken from the ConfigMap and not from the containers default configuration file for the application.
+> Note that the message is taken from the ConfigMap and not from the container's default configuration file for the application.
 
 ## Changing the ConfigMap
 
@@ -55,13 +55,13 @@ Apply the change in the ConfigMap.
 kubectl apply -f k8s/configmap.yaml
 ```
 
-or run the below command:
+or run the following command:
 
 ```bash
 kubectl patch cm my-configmap -p '{"data": {"app.conf": "message = Some different message"}}'
 ```
 
-> Note: ConfigMap changes will not be reflected automatically. You need to restart the pod. (In this case, recreate/replace). You can get into tricky situations eg on deploying stuff via Helm Charts.
+> Note: ConfigMap changes will not be reflected automatically. You need to restart the pod. (In this case, recreate/replace). You can get into tricky situations e.g. when deploying stuff via Helm Charts.
 
 ```bash
 # restart the pod
@@ -77,7 +77,7 @@ If you want to reach it via browser, you first need to port-forward ingress-ngin
 kubectl port-forward svc/ingress-nginx-controller -n ingress-nginx 80
 ```
 
-Then, reach via below URLs:
+Then, reach via the URLs below:
 
 ```bash
 echo "${INGRESS_URL}/my-app"

@@ -1,6 +1,6 @@
 # Ephemeral Containers
 
-Ephemeral containers are a special type of container that runs temporarily in an existing Pod to accomplish user-initiated actions such as troubleshooting. It's stable since Kubernetes v1.25
+Ephemeral containers are a special type of container that runs temporarily in an existing Pod to accomplish user-initiated actions such as troubleshooting. It's stable since Kubernetes v1.25.
 
 Change into the lab directory:
 
@@ -10,9 +10,9 @@ cd 09_debugging_containers
 
 ## Distroless Images
 
-"Distroless" images contain only your application and its runtime dependencies. They do not contain package managers, shells or any other programs you would expect to find in a standard Linux distribution.
+"Distroless" images contain only your application and its runtime dependencies. They do not contain package managers, shells, or any other programs you would expect to find in a standard Linux distribution.
 
-Create the pod, which used a `distroless` image as base:
+Create the pod, which uses a `distroless` image as base:
 
 ```bash
 kubectl create -f k8s/pod.yaml
@@ -34,7 +34,7 @@ kubectl exec -it my-app -- /bin/ls -l /
 
 ## Debug containers to the rescue
 
-Run below command to attach a new container to the existing one:
+Run the following command to attach a new container to the existing one:
 
 ```bash
 kubectl debug -it my-app --image=busybox:1.28 --target=my-app
@@ -46,7 +46,7 @@ kubectl debug -it my-app --image=busybox:1.28 --target=my-app
 #/ #
 ```
 
-Run below commands inside the container:
+Run the following commands inside the container:
 
 ```bash
 ps -ef

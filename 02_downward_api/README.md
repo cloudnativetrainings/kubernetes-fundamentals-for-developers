@@ -1,6 +1,6 @@
 # Downward API
 
-In this training, you will learn about downward API to provide a container some information about itself.
+In this training, you will learn about the downward API, which provides a container with some information about itself.
 
 Change into the lab directory:
 
@@ -65,7 +65,7 @@ kubectl delete -f k8s/
 | `metadata.namespace`            | the pod's namespace                                                                                 |
 | `metadata.uid`                  | the pod's unique ID                                                                                 |
 | `metadata.annotations['<KEY>']` | the value of the pod's annotation named <KEY> (for example, `metadata.annotations['myannotation']`) |
-| `metadata.labels['<KEY>']`      | the text value of the pod's label named <KEY> (for example, `metadata.labels['mylabel']`            |
+| `metadata.labels['<KEY>']`      | the text value of the pod's label named <KEY> (for example, `metadata.labels['mylabel']`)           |
 
 ### Only as Environment Variable
 
@@ -74,9 +74,9 @@ kubectl delete -f k8s/
 | `spec.serviceAccountName` | the name of the pod's service account                                                                                                                                           |
 | `spec.nodeName`           | the name of the node where the Pod is executing                                                                                                                                 |
 | `status.hostIP`           | the primary IP address of the node to which the Pod is assigned                                                                                                                 |
-| `status.hostIPs`          | the IP addresses is a dual-stack version of `status.hostIP`, the first is always the same as `status.hostIP`. The field is available if you enable the PodHostIPs feature gate. |
+| `status.hostIPs`          | the list of IP addresses is a dual-stack version of `status.hostIP`, the first is always the same as `status.hostIP`. The field is available if you enable the PodHostIPs feature gate. |
 | `status.podIP`            | the pod's primary IP address (usually, its IPv4 address)                                                                                                                        |
-| `status.podIPs`           | the IP addresses is a dual-stack version of `status.podIP`, the first is always the same as `status.podIP`                                                                      |
+| `status.podIPs`           | the list of IP addresses is a dual-stack version of `status.podIP`, the first is always the same as `status.podIP`                                                              |
 
 ### Only as `downwardAPI` volume
 

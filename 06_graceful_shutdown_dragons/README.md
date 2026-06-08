@@ -1,6 +1,6 @@
 # There may be Dragons
 
-Although you taught Kubernetes about the proper period of time to do a graceful shutdown data loss can still happen.
+Although you taught Kubernetes about the proper period of time to do a graceful shutdown, data loss can still happen.
 
 In this lab you will learn about a possible reason for data loss.
 
@@ -22,7 +22,7 @@ kubectl get pods
 ```
 
 > [!NOTE]
-> Note that the Applications and the yaml Manifests are exactly the same.
+> Note that the applications and the YAML manifests are exactly the same.
 
 ## Watch the log files of the Pods
 

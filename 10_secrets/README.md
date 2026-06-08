@@ -10,7 +10,7 @@ cd 10_secrets
 
 ## Install Vault
 
-You can install Hashicorp vault via helm:
+You can install HashiCorp Vault via helm:
 
 ```bash
 helm upgrade --install vault vault \
@@ -21,7 +21,7 @@ helm upgrade --install vault vault \
 
 ## Configure Vault
 
-Vault CLI is already installed on the Google Cloud Shell and the Helm Chart is already applied in your cluster. However, the vault-0 pod will not become ready automatically.
+Vault CLI is already installed in your shell and the Helm Chart is already applied in your cluster. However, the vault-0 pod will not become ready automatically.
 
 ### Unseal Vault in the Cluster
 
@@ -32,7 +32,7 @@ vault-0                                 0/1     Running   0          25s
 vault-agent-injector-55748c487f-xflrn   1/1     Running   0          25s
 ```
 
-The vault is `sealed`. You can check the application status:
+The Vault is `sealed`. You can check the application status:
 
 ```bash
 kubectl exec -it vault-0 -n vault -- vault status
@@ -134,7 +134,7 @@ vault-0                                 1/1     Running   0          116m
 vault-agent-injector-55748c487f-xflrn   1/1     Running   0          116m
 ```
 
-### Prepare vault to be used with our Pods inside Kubernetes
+### Prepare Vault to be used with our Pods inside Kubernetes
 
 ```bash
 kubectl exec -it vault-0 -n vault -- /bin/sh
@@ -182,7 +182,7 @@ EOF
 Check the pod spec:
 
 > [!TIP]
-> Pay attention to `metadata.annotations` field.
+> Pay attention to the `metadata.annotations` field.
 
 ```bash
 cat k8s/pod.yaml
@@ -194,7 +194,7 @@ Apply the manifests and see it working:
 kubectl create -f k8s/
 ```
 
-Checkout the created `db-creds` file:
+Check out the created `db-creds` file:
 
 ```bash
 kubectl exec -it my-app -c my-app -- cat /vault/secrets/db-creds

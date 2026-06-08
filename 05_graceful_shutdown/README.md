@@ -14,7 +14,7 @@ cd 05_graceful_shutdown
 
 ### Create the Pod
 
-Inspect pod.yaml definition file and create the pod
+Inspect the pod.yaml definition file and create the pod
 
 ```bash
 cat k8s/pod.yaml
@@ -36,7 +36,7 @@ kubectl delete pod app
 
 ## Avoiding possible data loss
 
-Update `k8s/pod.yaml` file:
+Update the `k8s/pod.yaml` file:
 
 ```yaml
 apiVersion: v1
@@ -63,7 +63,7 @@ kubectl delete pod app
 ```
 
 > [!TIP]
-> Note that, this time the application now has enough time to do a graceful shutdown
+> Note that, this time, the application has enough time to do a graceful shutdown
 
 ## Danger Zone
 

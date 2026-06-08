@@ -35,7 +35,7 @@ You should get a `HTTP/1.1 200 OK` status code.
 
 ## Readiness Probe
 
-We will now change the readiness state of the application. Therefore please open an additional terminal for being able to communicate with the application.
+We will now change the readiness state of the application. Therefore please open an additional terminal so that you can communicate with the application.
 
 ```bash
 # [TERMINAL-1] Check the readiness of the application
@@ -54,11 +54,11 @@ set unready
 curl -I http://${INGRESS_IP}/probe-app
 ```
 
-> Kubernetes does not route any traffic anymore to the unready Pod. If you would have created the application via a Deployment scaled to 2 replicas the application would still serve traffic on the ready Pod.
+> Kubernetes does not route any traffic anymore to the unready Pod. If you had created the application via a Deployment scaled to 2 replicas, the application would still serve traffic on the ready Pod.
 
 ## Liveness Probe
 
-We will now change the liveness state of the application. Therefore please open an additional terminal for being able to communicate with the application.
+We will now change the liveness state of the application. Therefore please open an additional terminal so that you can communicate with the application.
 
 ```bash
 # [TERMINAL-1] Check the readiness of the application
