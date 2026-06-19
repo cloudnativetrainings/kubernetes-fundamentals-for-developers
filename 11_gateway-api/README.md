@@ -1,7 +1,7 @@
 
 # Gateway API
 
-## The Cluster Admins Job
+## The Cluster Admin's Job
 
 ```bash
 # install CRDs
@@ -21,7 +21,7 @@ helm upgrade --install cilium cilium/cilium -n kube-system \
 kubectl get gatewayclass
 ```
 
-## The Plattform Operators Job
+## The Platform Operator's Job
 
 ```bash
 # install
@@ -31,7 +31,7 @@ kubectl apply -f k8s/gateway.yaml
 kubectl get gateway
 ```
 
-## The Devs Job
+## The Devs' Job
 
 ```bash
 # apply app

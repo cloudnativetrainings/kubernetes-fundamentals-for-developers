@@ -22,3 +22,5 @@ show warnings via hadolint and docker build
 # lab configmaps
 
 app should poll config file
+
+# gatewayip lab really in here???
